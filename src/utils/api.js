@@ -16,7 +16,7 @@ api.interceptors.request.use(
   },
   function (error) {
     console.log("REQUEST ERROR", error);
-  }
+  },
 );
 
 api.interceptors.response.use(
@@ -25,10 +25,10 @@ api.interceptors.response.use(
     return response;
   },
   function (error) {
-    error = error.response.data;
+    error = error.response;
     console.log("RESPONSE ERROR", error);
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;

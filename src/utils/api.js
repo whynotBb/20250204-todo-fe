@@ -25,7 +25,7 @@ api.interceptors.response.use(
     return response;
   },
   function (error) {
-    error = error.response;
+    error = error.response.data;
     console.log("RESPONSE ERROR", error);
     return Promise.reject(error);
   },
